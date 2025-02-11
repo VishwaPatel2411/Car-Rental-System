@@ -1,0 +1,34 @@
+
+
+<div class="car-container" *ngIf="car">
+  <div class="car-card">
+    <div class="car-image-container">
+      <img [src]="car.processedImage" alt="Car Image" class="car-image">
+    </div>
+
+    <div class="car-details">
+      <h2 class="car-title">{{ car.brand }} - {{ car.name }}</h2>
+      <p class="car-description">{{ car.description }}</p>
+
+      <h5 class="car-info">
+        Price: <b>${{ car.price }}</b> - Color: <b>{{ car.color }}</b> - 
+        Transmission: <b>{{ car.transmission }}</b> - Type: <b>{{ car.type }}</b> - 
+        Year: <b>{{ car.year }}</b>
+      </h5>
+    </div>
+  </div>
+
+  <div class="car-action">
+    <form [formGroup]="validateForm">
+      <label for="fromDate">From Date:</label>
+      <input type="date" id="fromDate" formControlName="fromDate" required />
+  
+      <label for="toDate">To Date:</label>
+      <input type="date" id="toDate" formControlName="toDate" required />
+   <br>
+      <button class="book-btn" (click)="bookACar(validateForm.value)" [disabled]="validateForm.invalid">
+        Book
+      </button>
+    </form>
+  </div>
+  

@@ -1,0 +1,50 @@
+/* Table container */
+.table-container {
+    max-width: 100%;
+    overflow-x: auto;
+   
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  /* Table header */
+  thead {
+    background:rgb(45 212 191);
+    color: white;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Hover effect */
+  tr:hover {
+    background: #f1f1f1;
+  }
+  
+  /* Status styles */
+  .pending {
+    color: #ff9800;
+    font-weight: bold;
+  }
+  
+  .approved {
+    color: #4CAF50;
+    font-weight: bold;
+  }
+  
+  .rejected {
+    color: #f44336;
+    font-weight: bold;
+  }
+  

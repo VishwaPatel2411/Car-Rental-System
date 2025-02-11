@@ -1,0 +1,81 @@
+<div style="margin-top: 50px; padding: 40px;">
+  <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+    <div class="flex flex-col items-center">
+      <h1 class="text-xl font-bold text-gray-800 mb-4 text-center">Search Car</h1>
+
+      <form nz-form [formGroup]="searchCarForm">
+        <div class="form-group">
+          <select id="brand" formControlName="brand" >
+            <option value="" disabled selected>Select a Brand</option>
+            <option *ngFor="let brand of listOfBrands" [value]="brand">{{ brand }}</option>
+          </select>
+          <div *ngIf="searchCarForm.controls['brand'].invalid && searchCarForm.controls['brand'].touched" class="error-message">
+            Brand is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <select id="type" formControlName="type" >
+            <option value="" disabled selected>Select a Type</option>
+            <option *ngFor="let type of listOfType" [value]="type">{{ type }}</option>
+          </select>
+          <div *ngIf="searchCarForm.controls['type'].invalid && searchCarForm.controls['type'].touched" class="error-message">
+            Type is required.
+          </div>
+        </div>
+    
+    
+      <div class="form-group">
+        <select id="transmission" formControlName="transmission" >
+          <option value="" disabled selected>Select a Transmission</option>
+          <option *ngFor="let transmission of listOfTransmission" [value]="transmission">{{ transmission }}</option>
+        </select>
+        <div *ngIf="searchCarForm.controls['transmission'].invalid && searchCarForm.controls['transmission'].touched" class="error-message">
+          Transmission is required.
+        </div>
+      </div>
+      
+    
+      <div class="form-group">
+        <select id="color" formControlName="color" >
+          <option value="" disabled selected>Select a Colour</option>
+          <option *ngFor="let color of listOfColor" [value]="color">{{ color }}</option>
+        </select>
+        <div *ngIf="searchCarForm.controls['color'].invalid && searchCarForm.controls['color'].touched" class="error-message">
+          Colour is required.
+        </div>
+      </div>
+
+        <button nz-button class="login-form-button login-form-margin w-full" [nzType]="'primary'" (click)="searchCar()">
+          Search
+        </button>
+      </form>
+    </div>
+  </nz-spin>
+</div>
+
+<div *ngIf="cars.length > 0 else noResults" class="car-list-container">
+  <h1 class="title">Car List</h1>
+
+  <div class="car-grid">
+    <div *ngFor="let car of cars" class="car-card">
+      <img [src]="car.processedImage" alt="Car Image" class="car-image">
+
+      <div class="car-info">
+        <h2 class="car-name">{{ car.name }}</h2>
+        <p>{{ car.brand }}</p>
+        <p>{{ car.type }}</p>
+        <p>{{ car.transmission }}</p>
+        <p>{{ car.color }}</p>
+        <p>{{ car.price }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #noResults>
+  <div class="no-results">
+    Sorry, No search found.
+  </div>
+</ng-template>
+
+        

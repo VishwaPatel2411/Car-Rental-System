@@ -1,0 +1,104 @@
+// .booking-container {
+//     padding: 16px;
+//   }
+  
+//   .booking-item {
+//     background-color: #e2e8f0; /* Gray background */
+//     padding: 12px;
+//     border-radius: 8px;
+//     margin-bottom: 12px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//   }
+  
+//   .booking-info {
+//     font-weight: bold;
+//   }
+  
+//   .buttons {
+//     display: flex;
+//     gap: 8px;
+//   }
+  
+//   .ml-2 {
+//     margin-left: 8px;
+//   }
+  /* Table container */
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Table header */
+thead {
+  background: rgb(45 212 191);
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Hover effect */
+tr:hover {
+  background: #f1f1f1;
+}
+
+/* Status styles */
+.pending {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.approved {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.rejected {
+  color: #f44336;
+  font-weight: bold;
+}
+
+/* Buttons */
+.approve-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reject-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.approve-btn:hover {
+  background: #218838;
+}
+
+.reject-btn:hover {
+  background: #c82333;
+}

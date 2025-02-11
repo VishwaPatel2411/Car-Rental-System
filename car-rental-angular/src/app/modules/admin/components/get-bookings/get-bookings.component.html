@@ -1,0 +1,50 @@
+<!-- <nz-spin [nzSpinning]="isSpinning">
+  <div class="booking-container">
+    <div *ngFor="let booking of bookings" class="booking-item">
+      <div class="booking-info">{{ booking.id }} - {{ booking.bookCarStatus }} -{{booking.brand}}- Name:{{booking.name}}- Transmission:{{booking.transmission}}- Type:{{booking.type}}-{{booking.fromDate | date: 'MM/dd/yyyy' }} to {{booking.toDate | date: 'MM/dd/yyyy' }} -     Days: {{booking.days}}-   Total RS:{{booking.price}}</div>
+
+      <div *ngIf="booking.bookCarStatus === 'PENDING'" class="buttons">
+        <button nz-button nzType="primary" (click)="changeBookingStatus(booking.id, 'Approve')">Approve</button>
+        <button nz-button nzType="primary" nzDanger (click)="changeBookingStatus(booking.id, 'Reject')" class="ml-2">Reject</button>
+      </div>
+    </div>
+  </div>
+</nz-spin> -->
+
+<nz-spin [nzSpinning]="isSpinning">
+  <table border="1" width="100%" style="border-collapse: collapse; text-align: left;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Brand</th>
+        <th>Name</th>
+        <th>Transmission</th>
+        <th>Type</th>
+        <th>From - To</th>
+        <th>Days</th>
+        <th>Total ₹</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookings">
+        <td>{{ booking.id }}</td>
+        <td>{{ booking.brand }}</td>
+        <td>{{ booking.name }}</td>
+        <td>{{ booking.transmission }}</td>
+        <td>{{ booking.type }}</td>
+        <td>{{ booking.fromDate | date: 'MM/dd/yyyy' }} - {{ booking.toDate | date: 'MM/dd/yyyy' }}</td>
+        <td>{{ booking.days }}</td>
+        <td>{{ booking.price }}</td>
+        <td>{{ booking.bookCarStatus }}</td>
+        <td>
+          <div *ngIf="booking.bookCarStatus === 'PENDING'">
+            <button (click)="changeBookingStatus(booking.id, 'Approve')" class="rejected">Approve  </button>
+            <button (click)="changeBookingStatus(booking.id, 'Reject')" class="approved" >&nbsp; Reject</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</nz-spin>

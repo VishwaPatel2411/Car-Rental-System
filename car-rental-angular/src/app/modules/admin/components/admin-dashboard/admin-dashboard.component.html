@@ -1,0 +1,27 @@
+
+
+<div class="container">
+  <div class="car-card" *ngFor="let car of cars">
+    <div class="card-header">
+      <div class="image-container">
+        <img class="profile" [src]="car.processedImage" alt="profile">
+      </div>
+
+      <div class="car-details">
+        <h2 class="car-title">{{car.brand}} - {{car.name}}</h2>
+        <p class="car-description">{{car.description}}</p>
+        <hr>
+
+        <h5 class="car-info">
+          Price: <b>Rs.{{car.price}}</b> - Color: <b>{{car.color}}</b> - Transmission: <b>{{car.transmission}}</b> - 
+          Type: <b>{{car.type}}</b> - Year: <b>{{car.year}}</b>
+        </h5>
+
+        <div class="action-buttons">
+          <button class="update-btn" routerLink="/admin/car/{{car.id}}">Update</button>
+          <button class="delete-btn" (click)="deleteCar(car.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

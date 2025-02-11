@@ -1,0 +1,80 @@
+.container {
+    background-color: #f8f8f8;
+    min-height: 91vh;
+    padding: 24px;
+  }
+  
+  .car-card {
+    margin-top: 10px;
+    background-color: #ccc;
+    padding: 24px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card-header {
+    display: flex;
+    width: 100%;
+  }
+  
+  .image-container {
+    flex: 1 1 33%;
+    padding-right: 16px;
+  }
+  
+  .profile {
+    height: 205px;
+    border-radius: 10px;
+    object-fit: cover;
+    width:83%;
+  }
+  
+  .car-details {
+    flex: 1 1 66%;
+
+  }
+  
+  .car-title {
+    cursor: pointer;
+    color: #108ee9;
+    font-size: 1.5em;
+  }
+  
+  .car-description {
+    margin: 10px 0;
+  }
+  
+  .car-info {
+    margin: 10px 0;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .update-btn,
+  .delete-btn {
+    padding: 5px 10px;
+  }
+  
+  .update-btn {
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .update-btn:hover,
+  .delete-btn:hover {
+    opacity: 0.8;
+  }
+  
