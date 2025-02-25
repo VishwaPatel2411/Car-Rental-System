@@ -1,18 +1,4 @@
-<!-- 
-<div *ngIf="isSpinning">Loading...</div>
 
-<div *ngFor="let booking of bookings">
-  <p>   &nbsp;&nbsp;Brand: {{ booking.brand }}</p>
-  <p>&nbsp;Name: {{ booking.name }}</p>
-  <p>&nbsp;Transmission: {{ booking.transmission }}</p>
-  <p>&nbsp;Type: {{ booking.type }}</p>
-  <p>&nbsp;From: {{ booking.fromDate | date: 'MM/dd/yyyy' }}</p>
-  <p>&nbsp;To: {{ booking.toDate | date: 'MM/dd/yyyy' }}</p>
-  <p>&nbsp;Days: {{ booking.days }}</p>
-  <p>&nbsp;Total RS: {{ booking.price }}</p>
-  <p>&nbsp;Status: {{ booking.bookCarStatus }}</p>
-  <hr> 
-</div> -->
 <nz-spin [nzSpinning]="isSpinning">
   <div class="table-container">
     <table>
